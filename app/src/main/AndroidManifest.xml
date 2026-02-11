@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AgrofarmMobile">
+
+        <!-- MÓDULO REPRODUCCIÓN -->
+        <activity android:name=".ReproduccionActivity" android:exported="false" android:label="Reproducción" android:parentActivityName=".DashboardActivity" />
+        <activity android:name=".RegistrarMontaActivity" android:exported="false" android:label="Registrar Monta" android:parentActivityName=".ReproduccionActivity" />
+        <activity android:name=".RegistrarPartoActivity" android:exported="false" android:label="Registrar Parto" android:parentActivityName=".ReproduccionActivity" />
+
+        <!-- MÓDULO PESAJES -->
+        <activity android:name=".PesajesActivity" android:exported="false" android:label="Pesajes" android:parentActivityName=".DashboardActivity" />
+        <activity android:name=".RegistrarPesajeActivity" android:exported="false" android:label="Registrar Pesaje" android:parentActivityName=".PesajesActivity" />
+
+        <!-- MÓDULO PERFIL -->
+        <activity android:name=".PerfilActivity" android:exported="false" android:label="Mi Perfil" android:parentActivityName=".DashboardActivity" />
+
+        <!-- MÓDULO CONSUMOS -->
+        <activity android:name=".ConsumoAlimentosActivity" android:exported="false" android:label="Consumos" android:parentActivityName=".DashboardActivity" />
+        <activity android:name=".RegistrarConsumoActivity" android:exported="false" android:label="Registrar Consumo" android:parentActivityName=".ConsumoAlimentosActivity" />
+
+        <!-- MÓDULO SANIDAD -->
+        <activity android:name=".SanidadActivity" android:exported="false" android:label="Sanidad" android:parentActivityName=".DashboardActivity" />
+        <activity android:name=".CreateSanidadActivity" android:exported="false" android:label="Registro Sanidad" android:parentActivityName=".SanidadActivity" />
+
+        <!-- MÓDULO ALIMENTOS -->
+        <activity android:name=".AlimentosActivity" android:exported="false" android:label="Alimentos" android:parentActivityName=".DashboardActivity" />
+        <activity android:name=".CreateAlimentoActivity" android:exported="false" android:label="Registro Alimento" android:parentActivityName=".AlimentosActivity" />
+
+        <!-- MÓDULO PRODUCCIÓN -->
+        <activity android:name=".ProduccionActivity" android:exported="false" android:label="Producción" android:parentActivityName=".DashboardActivity" />
+        <activity android:name=".CreateProduccionActivity" android:exported="false" android:label="Registro Producción" android:parentActivityName=".ProduccionActivity" />
+
+        <!-- OTROS -->
+        <activity android:name=".EditPigActivity" android:exported="false" android:label="Editar Cerdo" />
+        <activity android:name=".CreatePigActivity" android:exported="false" android:label="Nuevo Cerdo" />
+        <activity android:name=".PigsActivity" android:exported="false" android:label="Cerdos" />
+        <activity android:name=".DashboardActivity" android:exported="false" android:theme="@style/Theme.AgrofarmMobile.NoActionBar" />
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

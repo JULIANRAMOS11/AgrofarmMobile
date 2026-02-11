@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="verde_primary">#16a34a</color>
+    <color name="verde_dark">#14532d</color>
+    <color name="naranja_accent">#fb923c</color>
+    <color name="rojo_error">#dc2626</color>
+    <color name="azul_info">#3b82f6</color>
+    <color name="morado_accent">#a855f7</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

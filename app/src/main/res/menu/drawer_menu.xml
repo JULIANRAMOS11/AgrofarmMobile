@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/nav_pigs"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Cerdos" />
+        <item
+            android:id="@+id/nav_reproduccion"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="Reproducción" />
+        <item
+            android:id="@+id/nav_sanidad"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Sanidad" />
+        <item
+            android:id="@+id/nav_pesajes"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:title="Pesajes" />
+        <item
+            android:id="@+id/nav_alimentos"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="Alimentos" />
+        <item
+            android:id="@+id/nav_consumos"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Consumos" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Mi Perfil" />
+    </group>
+
+    <item android:title="Sesión">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@android:drawable/ic_lock_power_off"
+                android:title="Cerrar Sesión" />
+        </menu>
+    </item>
+</menu>

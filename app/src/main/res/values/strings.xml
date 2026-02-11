@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">AgrofarmMobile</string>
+    <string-array name="sexo_options">
+        <item>Macho</item>
+        <item>Hembra</item>
+    </string-array>
+    <string-array name="estado_options">
+        <item>ACTIVO</item>
+        <item>INACTIVO</item>
+    </string-array>
+    <string-array name="sanidad_options">
+        <item>Vacuna</item>
+        <item>Desparasitación</item>
+        <item>Tratamiento</item>
+        <item>Revisión</item>
+    </string-array>
+    <string-array name="alimento_options">
+        <item>Concentrado</item>
+        <item>Grano</item>
+        <item>Suplemento</item>
+        <item>Forraje</item>
+    </string-array>
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipo_servicio_options">
+        <item>MONTA NATURAL</item>
+        <item>INSEMINACION ARTIFICIAL</item>
+    </string-array>
+</resources>

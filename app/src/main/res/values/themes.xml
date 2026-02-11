@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AgrofarmMobile" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Main colors -->
+        <item name="colorPrimary">#1B5E20</item>
+        <item name="colorPrimaryDark">#003308</item>
+        <item name="colorAccent">#4CAF50</item>
+
+        <!-- Text colors for general use -->
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:textColorSecondary">#212121</item>
+        <item name="android:editTextColor">#000000</item>
+        <item name="android:textColor">#000000</item>
+
+        <!-- Fix for status bar overlapping -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#003308</item>
+    </style>
+
+    <style name="Theme.AgrofarmMobile" parent="Base.Theme.AgrofarmMobile" />
+
+    <style name="Theme.AgrofarmMobile.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="NavTextAppearance">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Estilo para EditText para asegurar texto negro -->
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textColorHint">#757575</item>
+    </style>
+</resources>
