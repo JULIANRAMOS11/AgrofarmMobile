@@ -12,7 +12,7 @@
         android:background="#1B5E20"
         android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Inventario de Alimentos"
+        app:title="inventario de alimentos"
         app:titleTextColor="#FFFFFF"
         app:navigationIcon="@android:drawable/ic_menu_revert" />
 

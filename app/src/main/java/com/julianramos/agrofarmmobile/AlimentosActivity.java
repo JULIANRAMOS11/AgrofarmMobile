@@ -1,6 +1,7 @@
 package com.julianramos.agrofarmmobile;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -30,7 +31,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AlimentosActivity extends AppCompatActivity {
 
@@ -43,6 +46,9 @@ public class AlimentosActivity extends AppCompatActivity {
     private SwipeRefreshLayout swipeRefresh;
     private RequestQueue requestQueue;
 
+    // Agregamos la variable para leer la caja fuerte
+    private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +59,9 @@ public class AlimentosActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> finish());
+
+        // Inicializamos la caja fuerte de AgroFarm
+        sharedPreferences = getSharedPreferences("AgrofarmPrefs", MODE_PRIVATE);
 
         rvAlimentos = findViewById(R.id.rvAlimentos);
         layoutLoader = findViewById(R.id.layoutLoaderAlimentos);
@@ -79,7 +88,7 @@ public class AlimentosActivity extends AppCompatActivity {
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setQueryHint("Buscar alimento...");
-        
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) { return false; }
@@ -102,6 +111,9 @@ public class AlimentosActivity extends AppCompatActivity {
         String url = "https://api-agrofarm.onrender.com/api/nutricion/alimentos";
         if (!swipeRefresh.isRefreshing()) layoutLoader.setVisibility(View.VISIBLE);
         tvEmpty.setVisibility(View.GONE);
+
+        // Extraemos la llave de seguridad para que el servidor nos deje entrar
+        String token = sharedPreferences.getString("token", "");
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 response -> {
@@ -132,7 +144,15 @@ public class AlimentosActivity extends AppCompatActivity {
                     layoutLoader.setVisibility(View.GONE);
                     swipeRefresh.setRefreshing(false);
                     handleVolleyError(error);
-                });
+                }) {
+            // AQUÍ ESTÁ LA MAGIA: Le enviamos el token al servidor
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer " + token);
+                return headers;
+            }
+        };
 
         request.setRetryPolicy(new DefaultRetryPolicy(35000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(request);
